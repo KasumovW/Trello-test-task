@@ -1,0 +1,301 @@
+body {
+  background-color: #33363d;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.ON-block {
+  width: 400px;
+  height: 50px;
+  background-color: #fb7e46;
+  font-size: 26px;
+  color: white;
+}
+
+.ON {
+  padding-top: 7px;
+  padding-left: 10px;
+}
+
+.add-card {
+  width: 400px;
+  height: 40px;
+  background-color: #2b2d33;
+  color: grey;
+  display: flex;
+  cursor: pointer;
+}
+
+.add-card:hover {
+  background-color: #191a1d;
+}
+
+.card-plus {
+  font-size: 33px;
+  margin-left: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+.id-block {
+  width: 380px;
+  background-color: #191a1d;
+  color: white;
+  border: 10px solid #2b2d33;
+}
+
+span {
+  color: grey;
+}
+
+.title {
+  padding: 10px;
+}
+
+.id {
+  padding: 10px;
+}
+
+.IN-progress {
+  width: 400px;
+  height: 50px;
+  background-color: #2a92bf;
+  font-size: 26px;
+  color: white;
+}
+
+.NEEDS {
+  width: 400px;
+  height: 50px;
+  background-color: #f4ce46;
+  font-size: 26px;
+  color: white;
+}
+
+.APPROVED {
+  width: 400px;
+  height: 50px;
+  background-color: #00b961;
+  font-size: 26px;
+  color: white;
+}
+
+.show-input {
+  width: 370px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #191a1d;
+  margin: auto;
+  color: white;
+  font-size: 16px;
+}
+
+.block-show {
+  background-color: #2b2d33;
+  padding: 10px;
+}
+
+.add-card-btn {
+  width: 220px;
+  text-align: center;
+  background-color: gray;
+  color: lightgray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.add-card-x {
+  margin-left: 15px;
+  font-size: 20px;
+  color: lightgray;
+  cursor: pointer;
+}
+
+.add-card-block {
+  display: flex;
+  padding-left: 10px;
+  background-color: #2b2d33;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1650px) {
+  .ON-block {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .ON {
+    padding: 0;
+  }
+
+  .id-block {
+    width: 290px;
+  }
+
+  .add-card {
+    width: 310px;
+  }
+
+  .show-input {
+    width: 280px;
+  }
+
+  .IN-progress {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .NEEDS {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .APPROVED {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center {
+  }
+
+  .ON-block {
+    width: 500px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .IN-progress {
+    width: 500px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .NEEDS {
+    width: 500px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .APPROVED {
+    width: 500px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .id-block {
+    width: 490px;
+  }
+
+  .add-card {
+    width: 510px;
+    margin-bottom: 20px;
+  }
+
+  .show-input {
+    width: 480px;
+  }
+
+  .add-card-block {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center {
+  }
+
+  .ON-block {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .IN-progress {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .NEEDS {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .APPROVED {
+    width: 300px;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+  .id-block {
+    width: 290px;
+  }
+
+  .add-card {
+    width: 310px;
+    margin-bottom: 20px;
+  }
+
+  .show-input {
+    width: 280px;
+  }
+
+  .add-card-block {
+    margin-bottom: 20px;
+  }
+}
