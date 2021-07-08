@@ -17,15 +17,7 @@ body {
   color: white;
 }
 
-.orange {
-  width: 400px;
-  height: 50px;
-  background-color: #fb7e46;
-  font-size: 26px;
-  color: white;
-}
-
-.blue {
+.NEEDS {
   width: 400px;
   height: 50px;
   background-color: #2a92bf;
@@ -33,21 +25,22 @@ body {
   color: white;
 }
 
-.yellow {
-  background-color: #f4ce46;
+.IN-progress {
   width: 400px;
   height: 50px;
+  background-color: #f4ce46;
   font-size: 26px;
   color: white;
 }
 
-.green {
-  background-color: #00b961;
+.APPROVED {
   width: 400px;
   height: 50px;
+  background-color: #00b961;
   font-size: 26px;
   color: white;
 }
+
 
 .ON {
   padding-top: 7px;

@@ -5,6 +5,9 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadBoardData } from "../redux/action";
+import Needs from './Needs';
+import Progress from './Progress';
+import Approved from './Approved';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,9 +29,10 @@ function App() {
             </div>
           ) : (
             <>
-              {board.map((item) => {
-                return <Hold item={item} />;
-              })}
+              <Hold />
+              <Needs />
+              <Progress />
+              <Approved />
             </>
           )}
         </Route>

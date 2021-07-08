@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import Block from './Block';
 
 function Needs(props) {
   const [showNeeds, setShowNeeds] = useState(false);
+  const todo = useSelector(state => state.board.board)
   return (
     <div>
       <div>
         <div className="NEEDS">
           <div className="ON">NEEDS REVIEW (0)</div>
         </div>
-        <div className="id-block">
-          <div className="id">
-            id: <span>123</span>
-          </div>
-          <div className="title">
-            <span>title</span>
-          </div>
-        </div>
+        {todo.map((item) => {
+          return(
+            <Block key={item.id} item={item}/>
+          )
+        })}
         {showNeeds && (
           <div>
             <div className="block-show">

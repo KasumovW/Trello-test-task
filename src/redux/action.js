@@ -18,9 +18,21 @@ export const loginStart = (login, pass) => (dispatch) => {
 export const loadBoardData = () => (dispatch) => {
     dispatch({ type: "load/board/start" });
 
-    fetch("http://localhost:3010/board")
+    fetch("http://localhost:3010/todo")
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: "load/board/success", payload: json });
       });
 };
+
+export const deleting = (id) => (dispatch) => {
+  dispatch({ type: "delete/load/start"})
+
+  fetch(`http://localhost:3010/todo/${id}`, {
+    method: 'DELETE',
+  })
+  .then((response) => response.json())
+  .then((json) => {
+    dispatch({ type: 'delete/load/success', payload: id })
+  })
+}
