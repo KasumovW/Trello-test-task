@@ -1,6 +1,7 @@
 import thunk from "redux-thunk";
 import { createStore } from "redux";
-import { data } from "./data";
+import { user } from './reducer/user';
+import { board } from './reducer/board';
 const { createLogger } = require("redux-logger/src");
 const { applyMiddleware } = require("redux");
 const { combineReducers } = require("redux");
@@ -11,6 +12,6 @@ const logger = createLogger({
 });
 
 export const store = createStore(
-  combineReducers({ data }),
+  combineReducers({ board, user }),
   applyMiddleware(thunk, logger)
 );
