@@ -1,23 +1,30 @@
 const initialState = {
+  newTodo: "",
   board: [],
   boardLoading: false,
-}
+};
 export const board = (state = initialState, actions) => {
   switch (actions.type) {
-    case 'load/board/start':
+    case "update/content":
+      return {
+        ...state,
+        newTodo: actions.payload,
+      };
+
+    case "load/board/start":
       return {
         ...state,
         boardLoading: true,
-      }
+      };
 
-    case 'load/board/success':
+    case "load/board/success":
       return {
         ...state,
         board: actions.payload,
         boardLoading: false,
-      }
+      };
 
-    case 'delete/load/start':
+    case "delete/load/start":
       return {
         ...state,
         board: state.board.map((item) => {
@@ -25,21 +32,44 @@ export const board = (state = initialState, actions) => {
             return {
               ...item,
               deleting: true,
-            }
+            };
           }
           return item;
-        })
-      }
+        }),
+      };
 
-    case 'delete/load/success':
+    case "delete/load/success":
       return {
         ...state,
-        board: state.board.filter(
-          (item) => item.id !== actions.payload,
-        ),
+        board: state.board.filter((item) => item.id !== actions.payload),
+      };
+
+    case "add/load/start":
+      return {
+        ...state,
+        board: [
+          ...state.board,
+          {
+            ...actions.payload,
+          },
+        ],
+      };
+
+    case "add/load/success":
+      return {
+        ...state,
+        newTodo: "",
+        board: state.board.map((message) => {
+          if (message.id === actions.payload.id) {
+            return {
+              ...message,
+            };
+          }
+          return message;
+        }),
       };
 
     default:
       return state;
   }
-}
+};
