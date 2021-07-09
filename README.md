@@ -32,7 +32,7 @@ git clone https://github.com/KasumovW/Trello-test-task.git
 
 2. Указать путь к проекту:
 ```javascript
-cd tesk-task
+cd Trello-test-task
 ```
 
 3. Затем устоновить зависимости проекта:
