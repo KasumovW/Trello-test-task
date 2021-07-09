@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBord, loadBoardData } from "../redux/action";
 import Block from "./Block";
 
-function Hold({ item }) {
+function Hold()  {
   const dispatch = useDispatch();
   const [showNeeds, setShowNeeds] = useState(false);
   const [value, setValue] = useState("");
@@ -20,17 +20,19 @@ function Hold({ item }) {
     <div>
       <div>
         <div className="ON-block">
-          <div className="ON">ON-HOLD (0)</div>
+          <div className="ON">ON-HOLD ({todo.length})</div>
         </div>
-        {loading ? (
-          <div className="loading-spinner">
-            Loading <i className="fas fa-sync-alt"></i>
-          </div>
-        ) : (
-          todo.map((item) => {
-            return <Block key={item.id} item={item} />;
-          })
-        )}
+        <div className="itDD">
+          {loading ? (
+            <div className="loading-spinner">
+              Loading <i className="fas fa-sync-alt"></i>
+            </div>
+          ) : (
+            todo.map((item) => {
+              return <Block key={item.id} item={item} />;
+            })
+          )}
+        </div>
         {showNeeds && (
           <div>
             <div className="block-show">

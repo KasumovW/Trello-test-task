@@ -9,7 +9,7 @@ function BlockHold({ item }) {
   };
 
   return (
-    <div className="id-block">
+    <div className="id-block" draggable={true}>
       <div className="delete" onClick={() => handleDelete(item.id)}>
         ✖
       </div>

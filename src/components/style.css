@@ -227,6 +227,14 @@ span {
   }
 }
 
+.hold {
+  border: 5px solid white;
+}
+
+.hide {
+  display: none;
+}
+
 .delete {
   text-align: end;
   cursor: pointer;

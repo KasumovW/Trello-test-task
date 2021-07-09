@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBoard4, loadBoard4Data } from "../redux/action";
 import BlockApproved from "./BlockApproved";
-import Block from "./Block";
 
-function Approved(props) {
+function Approved() {
   const dispatch = useDispatch();
   const [showApproved, setShowApproved] = useState(false);
   const [value, setValue] = useState("");
@@ -23,17 +22,19 @@ function Approved(props) {
     <div>
       <div>
         <div className="APPROVED">
-          <div className="ON">APPROVED (0)</div>
+          <div className="ON">APPROVED ({todo4.length})</div>
         </div>
-        {loading ? (
-          <div className="loading-spinner">
-            Loading <i className="fas fa-sync-alt"></i>
-          </div>
-        ) : (
-          todo4.map((item) => {
-            return <BlockApproved item={item} key={item.id} />;
-          })
-        )}
+        <div className="itDD">
+          {loading ? (
+            <div className="loading-spinner">
+              Loading <i className="fas fa-sync-alt"></i>
+            </div>
+          ) : (
+            todo4.map((item) => {
+              return <BlockApproved item={item} key={item.id} />;
+            })
+          )}
+        </div>
         {showApproved && (
           <div>
             <div className="block-show">

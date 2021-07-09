@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBoard3, loadBoard3Data } from "../redux/action";
 import BlockProgress from "./BlockProgress";
-import Block from "./Block";
 
-function Progress(props) {
+function Progress() {
   const [showProgress, setShowProgress] = useState(false);
   const [value, setValue] = useState("");
 
@@ -25,17 +24,19 @@ function Progress(props) {
     <div>
       <div>
         <div className="IN-progress">
-          <div className="ON">IN PROGRESS (0)</div>
+          <div className="ON">IN PROGRESS ({todo3.length})</div>
         </div>
-        {loading ? (
-          <div className="loading-spinner">
-            Loading <i className="fas fa-sync-alt"></i>
-          </div>
-        ) : (
-          todo3.map((item) => {
-            return <BlockProgress item={item} key={item.id} />;
-          })
-        )}
+        <div className="itDD">
+          {loading ? (
+            <div className="loading-spinner">
+              Loading <i className="fas fa-sync-alt"></i>
+            </div>
+          ) : (
+            todo3.map((item) => {
+              return <BlockProgress item={item} key={item.id} />;
+            })
+          )}
+        </div>
         {showProgress && (
           <div>
             <div className="block-show">

@@ -9,7 +9,7 @@ function BlockProgress({ item }) {
   };
 
   return (
-    <div className="id-block">
+    <div className="id-block" draggable={true}>
       <div className="delete" onClick={() => handleClick(item.id)}>
         ✖
       </div>

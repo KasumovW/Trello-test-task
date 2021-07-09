@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBoard2, loadBoard2Data } from "../redux/action";
 import BlockHold from "./BlockHold";
-import Block from "./Block";
 
-function Needs(props) {
+function Needs() {
   const [showHold, setShowHold] = useState(false);
   const [value, setValue] = useState("");
 
@@ -25,17 +24,19 @@ function Needs(props) {
     <div>
       <div className="center">
         <div className="NEEDS">
-          <div className="ON">NEEDS REVIEW (0)</div>
+          <div className="ON">NEEDS REVIEW ({todo2.length})</div>
         </div>
-        {loading ? (
-          <div className="loading-spinner">
-            Loading <i className="fas fa-sync-alt"></i>
-          </div>
-        ) : (
-          todo2.map((item) => {
-            return <BlockHold item={item} key={item} />;
-          })
-        )}
+        <div className="itDD">
+          {loading ? (
+            <div className="loading-spinner">
+              Loading <i className="fas fa-sync-alt"></i>
+            </div>
+          ) : (
+            todo2.map((item) => {
+              return <BlockHold item={item} key={item.id} />;
+            })
+          )}
+        </div>
         {showHold && (
           <div>
             <div className="block-show">

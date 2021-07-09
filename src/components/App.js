@@ -14,15 +14,10 @@ function App() {
     routes = (
       <Switch>
         <Route exact path="/">
-          {/* <div className="loading-spinner">*/}
-          {/*   Loading <i className="fas fa-sync"></i>*/}
-          {/*  </div>*/}
-          <>
-            <Hold />
-            <Needs />
-            <Progress />
-            <Approved />
-          </>
+          <Hold />
+          <Needs />
+          <Progress />
+          <Approved />
         </Route>
         <Redirect to="/" />
       </Switch>

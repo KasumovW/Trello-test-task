@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleting } from "../redux/action";
 
 function Block({ item }) {
@@ -9,7 +9,7 @@ function Block({ item }) {
   };
 
   return (
-    <div className="id-block">
+    <div className="id-block" draggable={true}>
       <div className="delete" onClick={() => handleDelete(item.id)}>
         ✖
       </div>
