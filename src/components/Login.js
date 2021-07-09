@@ -39,11 +39,15 @@ function Login(props) {
             Ошибка авторизации, повторите попытку
           </div>
         )}
-        {authorizing ? <div className="auth-btn disabled" onClick={handleClick1}>
-          Войти
-        </div> : <div className="auth-btn" onClick={handleClick1}>
-          Войти
-        </div>}
+        {authorizing ? (
+          <div className="auth-btn disabled" onClick={handleClick1}>
+            Войти
+          </div>
+        ) : (
+          <div className="auth-btn" onClick={handleClick1}>
+            Войти
+          </div>
+        )}
       </div>
     </div>
   );

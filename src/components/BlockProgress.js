@@ -1,16 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { deleting } from "../redux/action";
+import { useDispatch } from "react-redux";
+import { deleting3 } from "../redux/action";
 
-function Block({ item }) {
+function BlockProgress({ item }) {
   const dispatch = useDispatch();
-  const handleDelete = (id) => {
-    dispatch(deleting(id));
+  const handleClick = (id) => {
+    dispatch(deleting3(id));
   };
 
   return (
     <div className="id-block">
-      <div className="delete" onClick={() => handleDelete(item.id)}>
+      <div className="delete" onClick={() => handleClick(item.id)}>
         ✖
       </div>
       <div className="id">
@@ -23,4 +23,4 @@ function Block({ item }) {
   );
 }
 
-export default Block;
+export default BlockProgress;

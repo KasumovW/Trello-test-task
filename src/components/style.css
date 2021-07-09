@@ -41,7 +41,6 @@ body {
   color: white;
 }
 
-
 .ON {
   padding-top: 7px;
   padding-left: 10px;
@@ -207,11 +206,15 @@ span {
 
 .loading-spinner {
   color: white;
-  font-size: 50px;
+  font-size: 20px;
+  background-color: #191a1d;
+  border: 10px solid #2b2d33;
+  text-align: center;
+  padding: 5px 0;
 }
 
 .loading-spinner i {
-  font-size: 40px;
+  font-size: 15px;
   animation: rotate 1s linear infinite;
 }
 

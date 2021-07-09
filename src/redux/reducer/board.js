@@ -1,5 +1,4 @@
 const initialState = {
-  newTodo: "asd",
   board: [],
   boardLoading: false,
 };
@@ -24,29 +23,11 @@ export const board = (state = initialState, actions) => {
         boardLoading: false,
       };
 
-    case "delete/load/start":
-      return {
-        ...state,
-        board: state.board.map((item) => {
-          if (item.id === actions.payload) {
-            return {
-              ...item,
-              deleting: true,
-            };
-          }
-          return item;
-        }),
-      };
-
     case "delete/load/success":
       return {
         ...state,
         board: state.board.filter((item) => item.id !== actions.payload),
-      };
-
-    case "add/load/start":
-      return {
-        ...state,
+        deleting: false,
       };
 
     case "add/load/success":
@@ -56,8 +37,8 @@ export const board = (state = initialState, actions) => {
           ...state.board,
           {
             id: actions.payload.random,
-            title: actions.payload.value
-          }
+            title: actions.payload.value,
+          },
         ],
       };
 

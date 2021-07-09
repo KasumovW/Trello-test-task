@@ -1,11 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { deleting } from "../redux/action";
+import { useDispatch } from "react-redux";
+import { deleting4 } from "../redux/action";
 
-function Block({ item }) {
+function BlockApproved({ item }) {
   const dispatch = useDispatch();
   const handleDelete = (id) => {
-    dispatch(deleting(id));
+    dispatch(deleting4(id));
   };
 
   return (
@@ -23,4 +23,4 @@ function Block({ item }) {
   );
 }
 
-export default Block;
+export default BlockApproved;

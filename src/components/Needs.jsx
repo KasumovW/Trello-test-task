@@ -1,49 +1,59 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import Block from './Block';
-import { addBord, changeText } from '../redux/action';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addBoard2, loadBoard2Data } from "../redux/action";
+import BlockHold from "./BlockHold";
+import Block from "./Block";
 
 function Needs(props) {
-  const dispatch = useDispatch();
-  const [showNeeds, setShowNeeds] = useState(false);
-  const [value, setValue] = useState('');
-  const todo = useSelector(state => state.board.board);
-  const newTodo = useSelector(state => state.board.newTodo);
+  const [showHold, setShowHold] = useState(false);
+  const [value, setValue] = useState("");
 
-  const handleAdd = () => {
-    dispatch(addBord(value))
-  }
-  const handleText = e => {
-    dispatch(changeText(e.target.value))
-  }
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadBoard2Data());
+  }, [dispatch]);
+
+  const todo2 = useSelector((state) => state.board2.board2);
+  const loading = useSelector((state) => state.board2.board2Loading);
+
+  const handleAddBord2 = () => {
+    dispatch(addBoard2(value));
+  };
+
   return (
     <div>
-      <div>
+      <div className="center">
         <div className="NEEDS">
           <div className="ON">NEEDS REVIEW (0)</div>
         </div>
-        {todo.map((item) => {
-          return(
-            <Block key={item.id} item={item}/>
-          )
-        })}
-        {showNeeds && (
+        {loading ? (
+          <div className="loading-spinner">
+            Loading <i className="fas fa-sync-alt"></i>
+          </div>
+        ) : (
+          todo2.map((item) => {
+            return <BlockHold item={item} key={item} />;
+          })
+        )}
+        {showHold && (
           <div>
             <div className="block-show">
               <input
-                value={value}
-                onChange={(e) => {setValue(e.target.value)}}
-                type="text"
+                type={value}
+                onChange={(e) => setValue(e.target.value)}
                 className="show-input"
                 placeholder="Введите заголовок для этой карточки"
               />
             </div>
             <div className="add-card-block">
-              <div className="add-card-btn" onClick={() => handleAdd()}>Добавить карточку</div>
+              <div className="add-card-btn" onClick={() => handleAddBord2()}>
+                Добавить карточку
+              </div>
               <div
                 className="add-card-x"
                 onClick={() => {
-                  setShowNeeds(!showNeeds);
+                  setShowHold(!showHold);
                 }}
               >
                 ✖
@@ -51,7 +61,7 @@ function Needs(props) {
             </div>
           </div>
         )}
-        {showNeeds ? (
+        {showHold ? (
           ""
         ) : (
           <div className="add-card">
@@ -59,7 +69,7 @@ function Needs(props) {
             <div
               className="card-title"
               onClick={() => {
-                setShowNeeds(!showNeeds);
+                setShowHold(!showHold);
               }}
             >
               Добавить карточку

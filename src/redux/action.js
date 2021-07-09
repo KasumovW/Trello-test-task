@@ -32,7 +32,7 @@ export const deleting = (id) => (dispatch) => {
     method: "DELETE",
   })
     .then((response) => response.json())
-    .then((json) => {
+    .then(() => {
       dispatch({ type: "delete/load/success", payload: id });
     });
 };
@@ -59,14 +59,148 @@ export const addBord = (value) => (dispatch) => {
     .then(() => {
       dispatch({
         type: "add/load/success",
-        payload: { value, random }
+        payload: { value, random },
       });
     });
 };
 
-export const changeText = (value) => {
-  return {
-    type: "update/content",
-    payload: value,
-  };
+export const loadBoard2Data = () => (dispatch) => {
+  dispatch({ type: "load/board2/start" });
+
+  fetch("http://localhost:3010/todo2")
+    .then((response) => response.json())
+    .then((json) => {
+      dispatch({ type: "load/board2/success", payload: json });
+    });
+};
+
+export const deleting2 = (id) => (dispatch) => {
+  dispatch({ type: "delete2/load/start", payload: id });
+
+  fetch(`http://localhost:3010/todo2/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({ type: "delete2/load/success", payload: id });
+    });
+};
+
+export const addBoard2 = (value) => (dispatch) => {
+  const random = Math.random();
+  dispatch({ type: "add2/load/start" });
+
+  fetch("http://localhost:3010/todo2", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-type": "application/json",
+    },
+
+    body: JSON.stringify({
+      id: random,
+      title: value,
+    }),
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({
+        type: "add2/load/success",
+        payload: { value, random },
+      });
+    });
+};
+
+export const loadBoard3Data = () => (dispatch) => {
+  dispatch({ type: "load/board3/start" });
+
+  fetch("http://localhost:3010/todo3")
+    .then((response) => response.json())
+    .then((json) => {
+      dispatch({ type: "load/board3/success", payload: json });
+    });
+};
+
+export const deleting3 = (id) => (dispatch) => {
+  dispatch({ type: "delete3/load/start", payload: id });
+
+  fetch(`http://localhost:3010/todo3/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({ type: "delete3/load/success", payload: id });
+    });
+};
+
+export const addBoard3 = (value) => (dispatch) => {
+  const random = Math.random();
+  dispatch({ type: "add3/load/start" });
+
+  fetch("http://localhost:3010/todo3", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-type": "application/json",
+    },
+
+    body: JSON.stringify({
+      id: random,
+      title: value,
+    }),
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({
+        type: "add3/load/success",
+        payload: { value, random },
+      });
+    });
+};
+
+export const loadBoard4Data = () => (dispatch) => {
+  dispatch({ type: "load/board4/start" });
+
+  fetch("http://localhost:3010/todo4")
+    .then((response) => response.json())
+    .then((json) => {
+      dispatch({ type: "load/board4/success", payload: json });
+    });
+};
+
+export const deleting4 = (id) => (dispatch) => {
+  dispatch({ type: "delete4/load/start", payload: id });
+
+  fetch(`http://localhost:3010/todo4/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({ type: "delete4/load/success", payload: id });
+    });
+};
+
+export const addBoard4 = (value) => (dispatch) => {
+  const random = Math.random();
+  dispatch({ type: "add4/load/start" });
+
+  fetch("http://localhost:3010/todo4", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-type": "application/json",
+    },
+
+    body: JSON.stringify({
+      id: random,
+      title: value,
+    }),
+  })
+    .then((response) => response.json())
+    .then(() => {
+      dispatch({
+        type: "add4/load/success",
+        payload: { value, random },
+      });
+    });
 };
