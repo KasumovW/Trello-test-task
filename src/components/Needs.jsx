@@ -6,11 +6,12 @@ import { addBord, changeText } from '../redux/action';
 function Needs(props) {
   const dispatch = useDispatch();
   const [showNeeds, setShowNeeds] = useState(false);
+  const [value, setValue] = useState('');
   const todo = useSelector(state => state.board.board);
   const newTodo = useSelector(state => state.board.newTodo);
 
   const handleAdd = () => {
-    dispatch(addBord(newTodo))
+    dispatch(addBord(value))
   }
   const handleText = e => {
     dispatch(changeText(e.target.value))
@@ -30,15 +31,15 @@ function Needs(props) {
           <div>
             <div className="block-show">
               <input
-                value={newTodo}
-                onChange={handleText}
+                value={value}
+                onChange={(e) => {setValue(e.target.value)}}
                 type="text"
                 className="show-input"
                 placeholder="Введите заголовок для этой карточки"
               />
             </div>
             <div className="add-card-block">
-              <div className="add-card-btn" onClick={() => handleAdd}>Добавить карточку</div>
+              <div className="add-card-btn" onClick={() => handleAdd()}>Добавить карточку</div>
               <div
                 className="add-card-x"
                 onClick={() => {

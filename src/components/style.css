@@ -227,6 +227,8 @@ span {
 .delete {
   text-align: end;
   cursor: pointer;
+  margin-right: 5px;
+  color: grey;
 }
 
 @media screen and (max-width: 1650px) {

@@ -1,5 +1,5 @@
 const initialState = {
-  newTodo: "",
+  newTodo: "asd",
   board: [],
   boardLoading: false,
 };
@@ -47,26 +47,18 @@ export const board = (state = initialState, actions) => {
     case "add/load/start":
       return {
         ...state,
-        board: [
-          ...state.board,
-          {
-            ...actions.payload,
-          },
-        ],
       };
 
     case "add/load/success":
       return {
         ...state,
-        newTodo: "",
-        board: state.board.map((message) => {
-          if (message.id === actions.payload.id) {
-            return {
-              ...message,
-            };
+        board: [
+          ...state.board,
+          {
+            id: actions.payload.random,
+            title: actions.payload.value
           }
-          return message;
-        }),
+        ],
       };
 
     default:

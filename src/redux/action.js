@@ -37,15 +37,10 @@ export const deleting = (id) => (dispatch) => {
     });
 };
 
-export const addBord = (content) => (dispatch) => {
-  const id = Math.random();
+export const addBord = (value) => (dispatch) => {
+  const random = Math.random();
   dispatch({
     type: "add/load/start",
-    payload: {
-      id: id,
-      content: content,
-      type: "text",
-    },
   });
 
   fetch("http://localhost:3010/todo", {
@@ -56,14 +51,15 @@ export const addBord = (content) => (dispatch) => {
     },
 
     body: JSON.stringify({
-      type: "text",
+      id: random,
+      title: value,
     }),
   })
     .then((response) => response.json())
-    .then((json) => {
+    .then(() => {
       dispatch({
         type: "add/load/success",
-        payload: json,
+        payload: { value, random }
       });
     });
 };

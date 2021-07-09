@@ -10,7 +10,7 @@ function Block({ item }) {
 
   return (
     <div className="id-block">
-      <div className="delete" onClick={() => handleDelete(item.id)}>❌</div>
+      <div className="delete" onClick={() => handleDelete(item.id)}>✖</div>
       <div className="id">
         ID: <span>{item.id}</span>
       </div>
