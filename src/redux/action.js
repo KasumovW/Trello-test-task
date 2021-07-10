@@ -1,7 +1,7 @@
 export const loginStart = (login, pass) => (dispatch) => {
   dispatch({ type: "auth/started" });
 
-  fetch("/admin")
+  fetch("http://localhost:3010/admin")
     .then((response) => response.json())
     .then((json) => {
       const random = Math.random();
@@ -18,7 +18,7 @@ export const loginStart = (login, pass) => (dispatch) => {
 export const loadBoardData = () => (dispatch) => {
   dispatch({ type: "load/board/start" });
 
-  fetch("/todo")
+  fetch("http://localhost:3010/todo")
     .then((response) => response.json())
     .then((json) => {
       dispatch({ type: "load/board/success", payload: json });
@@ -28,7 +28,7 @@ export const loadBoardData = () => (dispatch) => {
 export const deleting = (id) => (dispatch) => {
   dispatch({ type: "delete/load/start" });
 
-  fetch(`/todo/${id}`, {
+  fetch(`http://localhost:3010/todo/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -43,7 +43,7 @@ export const addBord = (value) => (dispatch) => {
     type: "add/load/start",
   });
 
-  fetch("/todo", {
+  fetch("http://localhost:3010/todo", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -67,7 +67,7 @@ export const addBord = (value) => (dispatch) => {
 export const loadBoard2Data = () => (dispatch) => {
   dispatch({ type: "load/board2/start" });
 
-  fetch("/todo2")
+  fetch("http://localhost:3010/todo2")
     .then((response) => response.json())
     .then((json) => {
       dispatch({ type: "load/board2/success", payload: json });
@@ -77,7 +77,7 @@ export const loadBoard2Data = () => (dispatch) => {
 export const deleting2 = (id) => (dispatch) => {
   dispatch({ type: "delete2/load/start", payload: id });
 
-  fetch(`/todo2/${id}`, {
+  fetch(`http://localhost:3010/todo2/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -90,7 +90,7 @@ export const addBoard2 = (value) => (dispatch) => {
   const random = Math.random();
   dispatch({ type: "add2/load/start" });
 
-  fetch("/todo2", {
+  fetch("http://localhost:3010/todo2", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -114,7 +114,7 @@ export const addBoard2 = (value) => (dispatch) => {
 export const loadBoard3Data = () => (dispatch) => {
   dispatch({ type: "load/board3/start" });
 
-  fetch("/todo3")
+  fetch("http://localhost:3010/todo3")
     .then((response) => response.json())
     .then((json) => {
       dispatch({ type: "load/board3/success", payload: json });
@@ -124,7 +124,7 @@ export const loadBoard3Data = () => (dispatch) => {
 export const deleting3 = (id) => (dispatch) => {
   dispatch({ type: "delete3/load/start", payload: id });
 
-  fetch(`/todo3/${id}`, {
+  fetch(`http://localhost:3010/todo3/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -137,7 +137,7 @@ export const addBoard3 = (value) => (dispatch) => {
   const random = Math.random();
   dispatch({ type: "add3/load/start" });
 
-  fetch("/todo3", {
+  fetch("http://localhost:3010/todo3", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -161,7 +161,7 @@ export const addBoard3 = (value) => (dispatch) => {
 export const loadBoard4Data = () => (dispatch) => {
   dispatch({ type: "load/board4/start" });
 
-  fetch("/todo4")
+  fetch("http://localhost:3010/todo4")
     .then((response) => response.json())
     .then((json) => {
       dispatch({ type: "load/board4/success", payload: json });
@@ -171,7 +171,7 @@ export const loadBoard4Data = () => (dispatch) => {
 export const deleting4 = (id) => (dispatch) => {
   dispatch({ type: "delete4/load/start", payload: id });
 
-  fetch(`/todo4/${id}`, {
+  fetch(`http://localhost:3010/todo4/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -184,7 +184,7 @@ export const addBoard4 = (value) => (dispatch) => {
   const random = Math.random();
   dispatch({ type: "add4/load/start" });
 
-  fetch("/todo4", {
+  fetch("http://localhost:3010/todo4", {
     method: "POST",
     headers: {
       Accept: "application/json",
